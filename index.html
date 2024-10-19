@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Processor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Advanced Image Processor</h1>
+            <button id="dark-mode-toggle">ダークモード切替</button>
+        </header>
+        <main>
+            <div id="sidebar">
+                <div id="drop-zone">画像をドロップ</div>
+                <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+                <button id="select-files">ファイル選択</button>
+                <button id="process-btn">画像処理</button>
+                <div id="options">
+                    <h3>処理オプション</h3>
+                    <label>
+                        <input type="checkbox" id="resize-option"> リサイズ
+                        <input type="number" id="resize-width" placeholder="幅">
+                        <input type="number" id="resize-height" placeholder="高さ">
+                    </label>
+                    <label>
+                        <input type="checkbox" id="reduce-colors-option"> 色数削減
+                        <input type="number" id="color-count" placeholder="色数">
+                    </label>
+                    <label>
+                        <input type="checkbox" id="remove-bg-option"> 背景削除
+                    </label>
+                    <label>
+                        <input type="checkbox" id="crop-option"> トリミング
+                        <input type="number" id="crop-x" placeholder="X">
+                        <input type="number" id="crop-y" placeholder="Y">
+                        <input type="number" id="crop-width" placeholder="幅">
+                        <input type="number" id="crop-height" placeholder="高さ">
+                    </label>
+                    <h3>調整</h3>
+                    <label>
+                        明るさ: <input type="range" id="brightness" min="-100" max="100" value="0">
+                    </label>
+                    <label>
+                        コントラスト: <input type="range" id="contrast" min="-100" max="100" value="0">
+                    </label>
+                    <label>
+                        彩度: <input type="range" id="saturation" min="-100" max="100" value="0">
+                    </label>
+                </div>
+                <button id="save-btn">処理済み画像を保存</button>
+            </div>
+            <div id="main-content">
+                <div id="image-preview"></div>
+                <div id="image-info"></div>
+            </div>
+        </main>
+    </div>
+    <script src="js/settings.js"></script>
+    <script src="js/imageProcessing.js"></script>
+    <script src="js/uiHandlers.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
